@@ -32,7 +32,7 @@ const getCheck = async () => {
       cache: 'default'
     };
   
-    const url = `http://127.0.0.1:8000/postcards/check/`;
+    const url = `https://mind-server-ypuy.onrender.com/postcards/check/`;
   
     try {
       const response = await fetch(url, requestOptions);
@@ -52,7 +52,7 @@ const getCheck = async () => {
 
             // Send update to your database
             try {
-                const response = await fetch(`http://127.0.0.1:8000/postcards/${post.id}/`, {
+                const response = await fetch(`https://mind-server-ypuy.onrender.com/postcards/${post.id}/`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

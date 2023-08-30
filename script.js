@@ -47,7 +47,7 @@ const tagSelect = document.getElementById('tag')
 
 const getTags = async () => {
   console.log('TEST GET TAGS')
-  const response = await fetch(`http://127.0.0.1:8000/tags/`);
+  const response = await fetch(`https://mind-server-ypuy.onrender.com/tags/`);
   const tagsData = await response.json();
   tagsData.forEach(element => {
     const option = document.createElement('option');
@@ -76,7 +76,7 @@ addCardButton.addEventListener('click', function() {
       author: author,
       tag: tag
     }
-    const urlToPost = `http://127.0.0.1:8000/postcards/`;
+    const urlToPost = `https://mind-server-ypuy.onrender.com/postcards/`;
 
     async function postData(url, data) {
       try {
@@ -119,7 +119,7 @@ addCardButton.addEventListener('click', function() {
 
 const getCards = async () => {
   console.log('test')
-  const response = await fetch(`http://127.0.0.1:8000/postcards/`)
+  const response = await fetch(`https://mind-server-ypuy.onrender.com/postcards/`)
   const cards = await response.json()
   console.log(cards)
   displayCards(cards)
@@ -151,7 +151,7 @@ const displayCards = cardsArray => {
 
             const imgContainer = document.createElement('div');
             imgContainer.classList.add('imgContainer');
-            imgContainer.style.backgroundImage = `url("http://127.0.0.1:8000/${card['tag_image']}")`;
+            imgContainer.style.backgroundImage = `url("https://mind-server-ypuy.onrender.com/${card['tag_image']}")`;
             div.appendChild(imgContainer);
 
             const p1 = document.createElement('p');
